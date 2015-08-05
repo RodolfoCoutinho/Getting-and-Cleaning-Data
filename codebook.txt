@@ -1,0 +1,36 @@
+=======================================================================
+Codebook "Coursera Project for Getting and Cleaning Data"
+=======================================================================
+The following R packages were used
+- dplyr
+=======================================================================
+The following files were read as datasets into the project (these files can be found in 'UCI HAR Dataset' directory)
+
+- y_test.txt
+- y_train.txt
+- x_test.txt
+- x_train.txt
+- subject_test.txt
+- subject_train.txt
+- features.txt
+- activity_labels.txt
+=======================================================================
+After reading the files the following steps were performed:
+
+- x_test columns were filtered - excluded all columns without the word "mean" neither the word "std"
+- x_test column names were set acording to the file features
+- subject data from subject_test added to the filtered dataset
+- activity data from activity_labels added to the filtered dataset
+- activity data (numeric code) was replaced by the names of the activities according to activity_labels
+- repeated the 5 steps above for the train data: x_train, y_train, subject_train
+- subject columns for test and train transformed from lists to vectors
+- added all rows from both train and test datasets into a single dataset (all columns are the same)
+- calculated the mean of all columns by subject(30) and activity(6), resulting in a dataset with 180 observations
+
+
+Each observation of the final dataset has 81 variables:
+- 1 for activity description
+- 1 for identification of the subject who carried out the experiment
+- 46 for means and frequency means
+- 33 for standard deviations
+=======================================================================
